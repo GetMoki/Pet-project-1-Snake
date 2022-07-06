@@ -183,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .header__title::after {
   content: '';
-  background: url("/img/header/snake.png") 0 0/92px no-repeat;
+  background: url("../img/header/snake.png") 0 0/92px no-repeat;
   padding-right: 92px;
   position: relative;
   top: 5px;

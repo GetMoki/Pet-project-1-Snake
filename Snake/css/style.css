@@ -1,0 +1,293 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------------------*/
+/*Обнуляємо параметри замовчуванням у браузерів*/
+@import url(https://fonts.googleapis.com/css?family=Poppins:regular,italic,600,600,900);
+* {
+  /* зірочка означає, що ми звертаємось до всіх тегів на сторінці*/
+  padding: 0;
+  /*обнуляємо внутрішні відступи*/
+  margin: 0;
+  /*обнуляємо зовнішні відступи*/
+  border: 0;
+  /*обнуляємо межі*/
+}
+
+*, *:before, *:after {
+  /*змінюємо підрахунок ширини блоку для всіх тегів та тегів із псевдоелементами*/
+  -webkit-box-sizing: border-box;
+  /* "-webkit" означає apple*/
+  box-sizing: border-box;
+  /*Розмір боксу включає в себе всі відступи і будь-які межі. Контет буде зжиматись, щоб вмістить в боксі*/
+  -moz-box-sizing: border-box;
+  /* "-moz" означає firefox */
+}
+
+:focus, :active {
+  outline: none;
+}
+
+/*забераємо лінії обводки в деяких браузерах підчас використання предпроцесів*/
+a:focus, a:active {
+  outline: none;
+}
+
+/*забераємо лінії обводки в деяких браузерах підчас використання передпроцесів на посиланнях*/
+nav, footer, header, aside {
+  display: block;
+}
+
+/*одразу надаємо кільком тегам HTML5 властивостей блоку*/
+html, body {
+  height: 100%;
+  /*Вказуємо сайту займати всю висоту материського блоку - монітору*/
+  width: 100%;
+  /*Вказуємо сайту займати всю ширину материського блоку - монітору*/
+  font-size: 100%;
+  /*Розмір за замовчуванням має 100% від вказаного розміру*/
+  line-height: 1;
+  /*Міжрядковий інтервал дорівнює ширині шрифта*/
+  font-size: 14px;
+  /*Розмір шрифта за замовчуванням 14 пікселів. Класіка.*/
+  -ms-text-size-adjust: 100%;
+  /* "-ms" значить microsoft (не даємо браузеру самовільно змінювати розмір шрифта) */
+  -moz-text-size-adjust: 100%;
+  /* "-moz" означає firefox (не даємо браузеру самовільно змінювати розмір шрифта)*/
+  -webkit-text-size-adjust: 100%;
+  /* "-webkit" означає apple (не даємо айфонам самовільно змінювати розмір шрифта)*/
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+/*Звертаємось до тегів форм і просимо їх наслідувати сімейство шрифта*/
+input::-ms-clear {
+  display: none;
+}
+
+/*Заберає заданий автоматично стиль кнопки "очистити текстове поле". Спочатку ця кнопка невидима і 
+з'являється у правій частині поля лише підчас введення тексту. Браузер Internet Explorer& Edge.*/
+button {
+  cursor: pointer;
+}
+
+/*Задаємо стиль курсору підчас наведеня на кнопку*/
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/*Забираємо зайві відступи та пробели навкруги кнопок в браузері Firefox.*/
+a, a:visited {
+  text-decoration: none;
+}
+
+/*Відвідані посилання не змінюються*/
+a:hover {
+  text-decoration: none;
+}
+
+/*Посилання при наведенні не змінюються*/
+ul li {
+  list-style: none;
+}
+
+/*Видаляємо стилі списків*/
+img {
+  vertical-align: top;
+}
+
+/*Встановлюємо за замовчуванням вертикальне позиціонування тегу картинки*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 400;
+}
+
+/*Обнуляємо стилі заголовку та вказуємо наслідувати сімейство шрифта*/
+/*------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*Підключення файлу зі шрифтами*/
+/*Підключаємо необхідні шрифти*/
+/*Родина шрифтів осовного тексту*/
+/*----------------------------------------------------------------------------------------*/
+/* general scss */
+.wrapper {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #2F8E84;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fullscreen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.game-over {
+  width: 100%;
+  height: auto;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  color: red;
+  text-shadow: 1px 5px black;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: center;
+  position: absolute;
+  -webkit-transition: all 0.4s ease-in 0s;
+  transition: all 0.4s ease-in 0s;
+}
+
+.game-over._off {
+  display: none;
+}
+
+.container {
+  width: 1024px;
+}
+
+/* header scss */
+.header__title {
+  font-size: 72px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 15px;
+}
+
+.header__title::after {
+  content: '';
+  background: url("/img/header/snake.png") 0 0/92px no-repeat;
+  padding-right: 92px;
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+.header__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 0 5px 0;
+}
+
+.header__score {
+  display: block;
+  width: 180px;
+  font-size: 24px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.header__score span {
+  font-style: italic;
+}
+
+.header__start {
+  color: #70757A;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0px 35px;
+  border-radius: 25px;
+  border: 1px solid #AAAFBD;
+  border-bottom: none;
+  background-color: #f9f9ff;
+  height: 50px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.header__start:active {
+  border-bottom: 5px solid #14bdac;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.header__text {
+  font-size: 12px;
+  margin: 10px 0 5px 0;
+  color: #ffffff;
+}
+
+.game {
+  width: auto;
+  height: auto;
+}
+
+.footer {
+  margin: 50px 0px 25px 0px;
+}
+
+.footer__title {
+  font-size: 25px;
+}
+
+.footer__row {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__icon {
+  margin: 0px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.footer__img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 60%;
+}
